@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Your Favorite Food 💖</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8e1f4, #e0c3f7, #c2e6ff);
+      background-size: 400% 400%;
+      animation: gradientBackground 15s ease infinite;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(106, 76, 147, 0.3);
+      text-align: center;
+    }
+    h1 {
+      color: #6a4c93;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .back-link {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+      background-size: 300% 300%;
+      animation: gradientButton 5s ease infinite;
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .back-link:hover {
+      transform: scale(1.05);
+    }
+    @keyframes gradientBackground {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    @keyframes gradientButton {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Order Your Favorite Food 💖</h1>
+    <p>Choose what you'd like to eat and fill the form to confirm your order! 🥳</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4jKzkwtHqj7fa6pCoNGokVLwxlgFILXboqapBg7I0x-V3nQ/viewform?usp=header" class="back-link" target="_blank">
+      <i class="fas fa-paper-plane"></i> Place Order Now
+    </a>
+  </div>
+</body>
+</html>
