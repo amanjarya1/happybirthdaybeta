@@ -6,6 +6,7 @@
     <title>Magical Birthday Cake</title>
     
     <style>
+      
       /* Global Styles */
       * {
         margin: 0;
@@ -16,6 +17,7 @@
       }
 
       body {
+  
         background: linear-gradient(135deg, #ffcce6, #c4e0ff);
         min-height: 100vh;
         display: flex;
@@ -529,12 +531,14 @@
     </style>
   </head>
   <body
+  
     __processed_7adb44bb-c731-4b39-a819-dea3d74cf4d5__="true"
     bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4yMiIsInNjb3JlIjoyMDAyMn1d"
     data-new-gr-c-s-check-loaded="14.1235.0"
     data-gr-ext-installed=""
 
   >
+    <audio id="bgMusic" src="music/birthday.mp3" autoplay loop></audio>
     <!-- Balloons and Confetti will be added by JavaScript -->
 
     <!-- Birthday Cake -->
@@ -669,10 +673,15 @@
     <!-- Navigation Buttons -->
     <div class="nav-buttons" bis_skin_checked="1">
       <button class="btn" onclick="goBack()">◀ Back to Memory Lane</button>
-      <button class="btn" onclick="goNext()">Next Surprise ▶</button>
+      <button class="btn" onclick="goNext()">Ab Yaha Click Kariye Ap ▶</button>
     </div>
-
+<div class="music-controls" style="text-align:center; margin-bottom:1rem;">
+        <button id="musicToggleBtn" class="btn music-btn">
+          <span id="musicBtnText">🔊 B'day Song  On Karo</span>
+        </button>
+      </div>
     <script>
+      
       // Global variables
       let candlesBlown = 0;
       const totalCandles = 5;
@@ -777,7 +786,25 @@
           document.body.appendChild(confetti);
         }
       }
+        // --- Music Play/Pause Button ---
+      const bgMusic = document.getElementById("bgMusic");
+      const musicToggleBtn = document.getElementById("musicToggleBtn");
+      const musicBtnText = document.getElementById("musicBtnText");
 
+      musicToggleBtn.addEventListener("click", function () {
+        if (bgMusic.paused) {
+          bgMusic.play();
+          musicBtnText.textContent = "Madam Ji Blow all the candles";
+        } else {
+          bgMusic.pause();
+          musicBtnText.textContent = "▶ Happy Birthday>>>";
+        }
+      });
+
+      // Optional: update button if music ends (if not looping)
+      bgMusic.addEventListener("ended", function () {
+        musicBtnText.textContent = "▶ Madam Ji Happy Birthday Music Ho Jye ";
+      });
       // Create cake decorations
       function createDecorations() {
         const cake = document.querySelector(".cake");

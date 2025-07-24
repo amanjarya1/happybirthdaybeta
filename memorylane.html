@@ -14,7 +14,8 @@
         font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
-      body {
+      body 
+      {
         background: linear-gradient(
           135deg,
           #ffcee6 0%,
@@ -99,7 +100,7 @@
         opacity: 0;
         animation: fadeIn 1s forwards 1s;
       }
-
+      
       .btn {
         padding: 0.8rem 1.5rem;
         margin: 0 0.5rem;
@@ -125,7 +126,7 @@
       .btn i {
         margin-right: 0.5rem;
       }
-
+      
       .gallery {
         display: flex;
         flex-wrap: nowrap;
@@ -522,7 +523,8 @@
     style=""
     data-new-gr-c-s-check-loaded="14.1235.0"
     data-gr-ext-installed=""
-  >
+    >
+    <audio id="bgMusic" src="music/12.mp3" autoplay loop></audio>
     <div class="scrapbook-bg" bis_skin_checked="1"></div>
     <div class="confetti" id="confetti-container" bis_skin_checked="1">
       <div
@@ -1907,6 +1909,8 @@
       ></div>
       <div
         class="confetti-piece"
+        style
+        class="confetti-piece"
         style="
           left: 13.6579vw;
           width: 7.14266px;
@@ -2125,10 +2129,17 @@
 
       <div class="slideshow-controls" style="opacity: 1" bis_skin_checked="1">
         <button id="startSlideshow" class="btn" style="display: flex">
-          <span>▶ Start Slideshow</span>
+          <span>▶ Start Slideshow</span>         
+          
+                
         </button>
+      <div class="music-controls" style="text-align:center; margin-bottom:1rem;">
+        <button id="musicToggleBtn" class="btn music-btn">
+          <span id="musicBtnText">🔊Music ke sath Dheko</span>
+        </button>
+      </div>
         <button id="pauseSlideshow" class="btn" style="display: none">
-          <span>⏸ Pause Slideshow</span>
+          <span>⏸Music ke sath Dheko </span>
         </button>
       </div>
 
@@ -2532,7 +2543,7 @@ Teri deewani..
           <span>← Back to Welcome</span>
         </button>
         <button id="nextButton" class="btn">
-          <span>✨ Next Surprise! ✨</span>
+          <span>✨Chalo Cake Cute Karte Hai ✨</span>
         </button>
       </div>
     </div>
@@ -2636,7 +2647,29 @@ Teri deewani..
           emoji: "🎂",
         },
       ];
+        // ...existing code...
 
+      // --- Music Play/Pause Button ---
+      const bgMusic = document.getElementById("bgMusic");
+      const musicToggleBtn = document.getElementById("musicToggleBtn");
+      const musicBtnText = document.getElementById("musicBtnText");
+
+      musicToggleBtn.addEventListener("click", function () {
+        if (bgMusic.paused) {
+          bgMusic.play();
+          musicBtnText.textContent = "🔊 Pause Music";
+        } else {
+          bgMusic.pause();
+          musicBtnText.textContent = "▶ Play Music";
+        }
+      });
+
+      // Optional: update button if music ends (if not looping)
+      bgMusic.addEventListener("ended", function () {
+        musicBtnText.textContent = "▶ Play Music";
+      });
+
+// ...existing code...
       // Create confetti elements
       function createConfetti() {
         const confettiContainer = document.getElementById("confetti-container");
